@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="400" height="200" style="border: 1px solid #000; ">
+
+    </canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+        var grd = ctx.createLinearGradient(0, 0, 0, 100);
+        grd.addColorStop(0, "red");
+        grd.addColorStop(0.8, "yellow");
+        grd.addColorStop(1, "orange");
+        ctx.fillStyle = grd;
+        ctx.fillRect(0, 0, 400, 200);
+
+        ctx.beginPath();
+        ctx.arc(200, 100, 50, Math.PI, 2* Math.PI);
+        ctx.fillStyle = 'green';
+        ctx.fill();
+
+        ctx.beginPath();
+        context.font = '60pt Calibri';
+      context.lineWidth = 3;
+
+        ctx.strokeText("SEA",200,200);
+    </script>
+</body>
+
+</html>

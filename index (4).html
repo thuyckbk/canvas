@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-eqhiv="X-UA_Compartible" content="IE=egde">
+	<meta name="viewport" content="width=device, initial-scale=1.0">
+	<title> Thuc hanh Funny Circle </title>
+</head>
+<body>
+	<canvas id = "myCanvas" width = "1250px" height = "750px" style="border:1px solid black">
+		
+	</canvas>
+	<script>
+		/*let carYPosition = 20;
+		var ctx = document.getElementById ('myCanvas').getContext('2d');
+		let yDistance = 1;
+		function moveCarup(){
+			ctx.clearRect(20,carYPosition,150,100);
+			if (carYPosition<630){
+			carYPosition+=yDistance;
+			}
+			drawCar();
+			
+		}
+		function downCarup(){
+
+			ctx.clearRect(20,carYPosition,150,100);
+			if (carYPosition>0){
+			carYPosition-=yDistance;
+			}
+			drawCar();
+			
+		}
+		function drawCar(){
+			ctx.beginPath();
+			ctx.fillStyle='#fa4b2a';
+			ctx.fillRect(20,carYPosition,150,100);
+		}
+		setInterval(moveCarup,10);
+		setInterval(downCarup,10);*/
+		let gameContext = document.getElementById("myCanvas").getContext("2d");
+
+    let carYPosition = 20;
+    let carXPosition = 20;
+
+    let carWidth = 150;
+    let carHeight = 100;
+
+    let gameTopPosition = 0;
+    let gameBottomPosition = 750;
+    let timeLoop = 1;
+
+    function drawCar() {
+      gameContext.beginPath();
+      gameContext.fillStyle='#fa4b2a';
+      gameContext.fillRect(carXPosition, carYPosition, carWidth, carHeight);
+    }
+
+    let yDistance = 1;
+    function moveCar() {
+      gameContext.clearRect(carXPosition, carYPosition, carWidth, carHeight);
+
+      let isTouchTop = carYPosition < gameTopPosition;
+      let isTouchBottom = carYPosition + carHeight > gameBottomPosition;
+      if (isTouchTop || isTouchBottom) {
+        yDistance = -yDistance;
+      }
+
+      carYPosition += yDistance;
+      drawCar();
+    }
+    setInterval(moveCar, timeLoop);
+
+	</script>
+</body>
+</html>
